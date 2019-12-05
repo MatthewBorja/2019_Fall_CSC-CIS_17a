@@ -1,0 +1,27 @@
+/* File:   Player.h
+ * Author: Matthew Borja
+ * Created on December 3, 2019, 9:14 PM
+ * Purpose: The specification for the Player class.
+ */
+
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include "AbsPlayer.h"
+#include "Deck.h"
+
+class Player : public AbsPlayer{
+    protected:
+        string name;
+        Hand *hand;
+        Deck *deck;
+        char nDeal;
+    public:
+        Player(string, char, char); 
+        ~Player();
+        void setHand();
+        string getName() const {return name;}   //Inline Function
+        void prntHand() const;
+};
+
+#endif /* PLAYER_H */
